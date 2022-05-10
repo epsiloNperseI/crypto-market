@@ -1,64 +1,46 @@
 package constant;
 
-public final class Currency {
-    //Fiat
+import java.lang.reflect.Field;
 
-    public final static String AED = "aed";
-    public final static String ARS = "ars";
-    public final static String AUD = "aud";
-    public final static String BDT = "bdt";
-    public final static String BHD = "bhd";
-    public final static String BMD = "bmd";
-    public final static String BRL = "brl";
-    public final static String CAD = "cad";
-    public final static String CHF = "chf";
-    public final static String CLP = "clp";
-    public final static String CNY = "cny";
-    public final static String CZK = "czl";
-    public final static String DKK = "dkk";
-    public final static String EUR = "eur";
-    public final static String GBP = "gbp";
-    public final static String HKD = "hkd";
-    public final static String HUF = "huf";
-    public final static String IDR = "idr";
-    public final static String ILS = "ils";
-    public final static String INR = "inr";
-    public final static String JPY = "jpy";
-    public final static String KRW = "krw";
-    public final static String KWD = "kwd";
-    public final static String LKR = "lkr";
-    public final static String MMK = "mmk";
-    public final static String MXN = "mxn";
-    public final static String MYR = "myr";
-    public final static String NOK = "nok";
-    public final static String NZD = "nzd";
-    public final static String PHP = "php";
-    public final static String PKR = "pkr";
-    public final static String PLN = "pln";
-    public final static String RUB = "rub";
-    public final static String SAR = "sar";
-    public final static String SEK = "sek";
-    public final static String SGD = "sgd";
-    public final static String THB = "thb";
-    public final static String TRY = "try";
-    public final static String TWD = "twd";
-    public final static String UAH = "uah";
-    public final static String USD = "usd";
-    public final static String VEF = "vef";
-    public final static String VND = "vnd";
-    public final static String XAG = "xag";
-    public final static String XAU = "xau";
-    public final static String XDR = "xdr";
-    public final static String ZAR = "zar";
+public final class Currency {
+
+    //currency
+    public static final String US_DOLLAR = "USD";
+    public static final String EURO = "EUR";
+    public static final String AUSTRALIAN_DOLLAR = "AUD";
+    public static final String SWISS_FRANC = "CHF";
+    public static final String SWEDISH_KRONA = "SEK";
+    public static final String POUND_STERLING = "GBP";
+    public static final String DANISH_KRONE = "DKK";
+    public static final String RUSSIAN_RUBLE = "RUB";
+    public static final String CANADIAN_DOLLAR = "CAD";
 
     // crypto
+    public final static String BITCOIN = "BTC";
+    public final static String LITECOIN = "LTC";
+    public final static String ETHEREUM = "ETH";
+    public final static String TETHER = "USDT";
+    public final static String BINANCE_COIN = "BNB";
+    public final static String USDC = "USDC";
+    public final static String PAXOS_GOLD = "PAXG";
+    public final static String MAKER = "MKR";
+    public final static String MONERO = "XMR";
+    public final static String AAVE = "AAVE";
+    public final static String KSM = "KSM";
+    public final static String ZCASH = "ZEC";
+    public final static String EGLD = "EGLD";
+    public final static String COMP = "COMP";
 
-    public final static String BNB = "bnb";
-    public final static String EOS = "eos";
-    public final static String Bitcoin = "BTC";
-    public final static String BCH = "bch";
-    public final static String ETH = "eth";
-    public final static String LTC = "ltc";
-    public final static String XLM = "xlm";
-    public final static String XRP = "xrp";
+    public static String getForUpdate() throws IllegalAccessException {
+        StringBuilder filter = new StringBuilder();
+        Field[] fields = Currency.class.getFields();
+        for (int i = 0; i <= fields.length - 1; i++) {
+            filter.append(fields[i].get(Currency.class));
+            if (fields.length - 1 != i) {
+                filter.append(",");
+            }
+        }
+
+        return filter.toString();
+    }
 }
