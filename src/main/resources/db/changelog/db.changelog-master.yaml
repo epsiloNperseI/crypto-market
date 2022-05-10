@@ -11,3 +11,15 @@ databaseChangeLog:
           relativeToChangelogFile: true
           splitStatements: true
           stripComments: true
+  - changeSet:
+      id: createAssetsTable
+      author: jul.t
+      changes:
+      - sqlFile:
+          dbms: mariadb
+          encoding: utf8
+          endDelimiter: \n/\s*\n|\n/\s*$
+          path: scripts/02-create-assets-schema.sql
+          relativeToChangelogFile: true
+          splitStatements: true
+          stripComments: true

@@ -1,6 +1,7 @@
 plugins {
 	id 'org.springframework.boot' version '2.6.3'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'org.liquibase.gradle' version '2.0.4'
 	id 'java'
 	id 'war'
 }
@@ -23,8 +24,10 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.28'
-	implementation 'org.liquibase:liquibase-core'
+	implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.29'
+	implementation 'org.liquibase:liquibase-core:4.9.1'
+	liquibaseRuntime 'org.liquibase:liquibase-groovy-dsl:3.0.2'
+	liquibaseRuntime 'mysql:mysql-connector-java:8.0.29'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
@@ -32,14 +35,20 @@ dependencies {
 	testImplementation 'org.springframework.security:spring-security-test'
 	implementation 'log4j:log4j:1.2.17'
 	implementation 'com.squareup.okhttp:okhttp:2.7.5'
+	// https://mvnrepository.com/artifact/org.hibernate/hibernate-gradle-plugin
+	implementation group: 'org.hibernate', name: 'hibernate-gradle-plugin', version: '6.0.0.Alpha6', ext: 'pom'
 
 	implementation 'org.junit:junit5-engine:5.0.0-ALPHA'
 	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+	implementation group: 'org.springframework', name: 'spring-webmvc', version: '5.3.19'
+
 //	testRuntimeOnly  'org.junit.jupiter:junit-jupiter-engine:5.8.2'
 	// https://mvnrepository.com/artifact/org.json/json
-	implementation 'org.json:json:20211205'
+	implementation 'org.json:json:20220320'
 }
+apply plugin: 'org.liquibase.gradle'
 
 test {
 	useJUnitPlatform()
 }
+
