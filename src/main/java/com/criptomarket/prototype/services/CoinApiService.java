@@ -28,19 +28,13 @@ public class CoinApiService {
     private final static String apiKeyPropName = "X-CoinAPI-Key";
     private final static String apiKeyValue = "FDE5DF1C-4507-4F1B-B688-9C4D86DF5C1F";
 
-    public static void main(String[] args) throws IllegalAccessException {
-        updateAssets();
-    }
-
-    public void updateDataByApi() {
-
+    public void updateDataByApi() throws IllegalAccessException {
     }
 
     public void updateExchanges() {
-
     }
 
-    public static void updateAssets() throws IllegalAccessException {
+    public void updateAssets() throws IllegalAccessException {
         Request request = new Request.Builder().url(baseUrl + "/assets?filter_asset_id=" + Currency.getForUpdate()).addHeader(apiKeyPropName, apiKeyValue).build();
 
         List<Asset> coins;
@@ -62,7 +56,7 @@ public class CoinApiService {
         }
     }
 
-    public static void updateById() {
+    public void updateById() {
         Request request = new Request.Builder().url(baseUrl + "/assets/SEK").addHeader(apiKeyPropName, apiKeyValue).build();
 
         try {
