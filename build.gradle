@@ -5,7 +5,8 @@ plugins {
 	id 'java'
 	id 'war'
 }
-
+apply plugin: 'war'
+apply plugin: 'application'
 group = 'com.criptomarcet'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
@@ -47,6 +48,7 @@ dependencies {
 	implementation 'org.json:json:20220320'
 }
 apply plugin: 'org.liquibase.gradle'
+
 
 test {
 	useJUnitPlatform()

@@ -9,8 +9,8 @@
     <property name="connection.password">root</property>
     <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-    <mapping class="dto.Asset"/>
+     <property name="hibernate.hbm2ddl.auto">update</property>
+    <mapping class="com.criptomarket.prototype.dto.Asset"/>
     <!-- DB schema will be updated if needed -->
-    <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
   </session-factory>
 </hibernate-configuration>

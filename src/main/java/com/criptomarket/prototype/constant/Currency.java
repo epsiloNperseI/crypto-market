@@ -1,4 +1,4 @@
-package constant;
+package com.criptomarket.prototype.constant;
 
 import java.lang.reflect.Field;
 

@@ -1,15 +1,14 @@
-package services;
+package com.criptomarket.prototype.services;
 
-import ch.qos.logback.core.joran.conditional.IfAction;
+import com.criptomarket.prototype.storages.AssetsStorage;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
-import constant.Currency;
-import dto.Asset;
+import com.criptomarket.prototype.constant.Currency;
+import com.criptomarket.prototype.dto.Asset;
 import org.springframework.stereotype.Service;
-import storages.AssetsStorage;
 
 import java.io.IOException;
 import java.math.BigDecimal;

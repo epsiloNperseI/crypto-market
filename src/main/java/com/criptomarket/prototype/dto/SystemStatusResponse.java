@@ -1,4 +1,4 @@
-package dto;
+package com.criptomarket.prototype.dto;
 
 public class SystemStatusResponse {
     int status;

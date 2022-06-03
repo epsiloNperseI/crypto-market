@@ -1,4 +1,4 @@
-package com.criptomarcet.demo;
+package com.criptomarket.prototype;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

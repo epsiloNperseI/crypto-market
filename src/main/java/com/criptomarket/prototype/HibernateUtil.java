@@ -1,6 +1,5 @@
-package com.criptomarcet.demo;
+package com.criptomarket.prototype;
 
-import dto.Asset;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

@@ -1,4 +1,4 @@
-package constant;
+package com.criptomarket.prototype.constant;
 
 public class Order {
     public static String GECKO_ASC =  "gecko_asc";
